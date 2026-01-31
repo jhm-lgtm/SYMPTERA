@@ -1,1 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SYMPTERA – Symptom Check</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="container">
+  <nav class="navbar">
+    <div class="logo">SYMPTERA</div>
+  </nav>
+
+  <section class="hero">
+    <h1>Check Your Symptoms</h1>
+    <p>Enter vitals and chat with the AI assistant.</p>
+
+    <input type="number" id="bp" placeholder="Blood Pressure" />
+    <input type="number" id="sugar" placeholder="Sugar Level" />
+
+    <button class="cta" onclick="checkVitals()">Check Vitals</button>
+
+    <div id="vitalsResult" class="result hidden">
+      <span id="vitalsRisk" class="risk-badge">Vitals Risk</span>
+      <p id="vitalsText"></p>
+    </div>
+
+    <a href="index.html" class="cta" style="margin-top:20px;">Back to Home</a>
+  </section>
+
+  <footer>
+    © 2026 SYMPTERA · Responsible AI for Health
+  </footer>
+</div>
+
+<!-- Chatbase chatbot -->
+<script>
+(function(){
+  if(!window.chatbase || window.chatbase("getState")!=="initialized"){
+    window.chatbase=(...arguments)=>{
+      if(!window.chatbase.q){window.chatbase.q=[]}
+      window.chatbase.q.push(arguments)
+    };
+    window.chatbase=new Proxy(window.chatbase,{
+      get(target,prop){
+        if(prop==="q"){return target.q}
+        return(...args)=>target(prop,...args)
+      }
+    })
+  }
+  const onLoad=function(){
+    const script=document.createElement("script");
+    script.src="https://www.chatbase.co/embed.min.js";
+    script.id="hajtKCx8ztVulmmOxsh7Y";
+    script.domain="www.chatbase.co";
+    document.body.appendChild(script)
+  };
+  if(document.readyState==="complete"){onLoad()}
+  else{window.addEventListener("load",onLoad)}
+})();
+</script>
+
+<script src="script.js"></script>
+</body>
+</html>
 
