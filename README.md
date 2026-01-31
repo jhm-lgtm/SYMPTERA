@@ -1,3 +1,2 @@
 # SYMPTERA
-SYMPTERA is an AI-powered platform that provides safe, non-diagnostic guidance on symptoms. Users can check their blood pressure and sugar levels and interact with a Chatbase AI chatbot for health insights.
-
+ SYMPTERA is an AI-powered symptom guidance platform that helps users understand their health concerns in a safe, non-diagnostic, and human-friendly way.
