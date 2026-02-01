@@ -2,7 +2,129 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #0b1d36, #000);
+  color: #eaf3ff;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  padding: 25px 60px;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: 700;
+  color: #3fa9f5;
+  letter-spacing: 2px;
+}
+
+.center {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+}
+
+.center h1 {
+  font-size: 46px;
+  background: linear-gradient(90deg, #3fa9f5, #00eaff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.main-text {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #cfe3ff;
+}
+
+.instruction-box {
+  margin: 25px auto;
+  padding: 15px 20px;
+  background: rgba(10,25,50,0.7);
+  border-radius: 14px;
+  font-size: 18px;
+}
+
+.examples {
+  margin: 20px auto;
+  padding: 15px;
+  max-width: 600px;
+  background: rgba(10,25,50,0.6);
+  border-radius: 14px;
+  font-style: italic;
+  font-size: 15px;
+}
+
+/* ARROW */
+.arrow-wrapper {
+  position: fixed;
+  bottom: 120px;
+  right: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: bounce 1.5s infinite;
+}
+
+.arrow-text {
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #7dd3fc;
+}
+
+.arrow {
+  width: 30px;
+  height: 30px;
+  border-right: 4px solid #3fa9f5;
+  border-bottom: 4px solid #3fa9f5;
+  transform: rotate(45deg);
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.cta {
+  margin: 30px auto 0;
+  padding: 14px 40px;
+  background: linear-gradient(90deg, #3fa9f5, #0066ff);
+  border-radius: 40px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.cta.small {
+  font-size: 16px;
+  padding: 10px 30px;
+}
+
+.disclaimer {
+  margin-top: 25px;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  opacity: 0.6;
+}
+
 }
 
 body {
