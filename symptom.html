@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>SYMPTERA – AI Symptom Assistant</title>
+  <title>SYMPTERA – AI Health Assistant</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -12,30 +12,19 @@
     <div class="logo">SYMPTERA</div>
   </nav>
 
-  <section class="hero">
-    <h1>AI Health Assistant 🤖</h1>
-    <p>
-      Describe your symptoms in your own words.  
-      SYMPTERA will provide safe, non-diagnostic guidance.
+  <!-- MAIN CHATBOT FOCUS -->
+  <section class="chatbot-section">
+    <p class="chatbot-hint">
+      Describe your symptoms in your own words. <br />
+      <strong>SYMPTERA</strong> will provide safe, non-diagnostic guidance.
     </p>
 
-    <!-- Chatbot Focus Message -->
-    <div class="card" style="margin-top:30px;">
-      <h3>Start Chatting</h3>
-      <p style="margin-top:10px; opacity:0.9;">
-        Example: <br>
-        <em>"I have fever, headache and body pain since yesterday"</em>
-      </p>
-    </div>
+    <p class="chatbot-note">
+      ⚠ This AI does not provide medical diagnosis or treatment.
+      Always consult a healthcare professional.
+    </p>
 
-    <span class="disclaimer" style="margin-top:30px; display:block;">
-      ⚠ This AI does not provide medical diagnosis or treatment.  
-      Always consult a healthcare professional for medical advice.
-    </span>
-
-    <a href="index.html" class="cta" style="margin-top:40px;">
-      Back to Home
-    </a>
+    <a href="index.html" class="cta">Back to Home</a>
   </section>
 
   <footer>
@@ -43,7 +32,7 @@
   </footer>
 </div>
 
-<!-- Chatbase chatbot embed -->
+<!-- Chatbase Chatbot -->
 <script>
 (function(){
   if(!window.chatbase || window.chatbase("getState")!=="initialized"){
