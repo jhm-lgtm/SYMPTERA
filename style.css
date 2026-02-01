@@ -88,3 +88,7 @@ footer {
 .risk-badge.medium { background:#fef9c3; color:#854d0e; }
 .risk-badge.high { background:#fee2e2; color:#991b1b; }
 
+.card h3 {
+  color: #3fa9f5;
+  margin-bottom: 10px;
+}
