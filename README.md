@@ -14,3 +14,6 @@ chatbot showing diagnostic results from entered symptoms and diseases.
 ![image alt](https://github.com/jhm-lgtm/SYMPTERA/blob/612dfb93b80a6a184c3831867f046c817355fa0d/Screenshot%20(56).png)
 
 ![image alt](https://github.com/jhm-lgtm/SYMPTERA/blob/38788ec33a2c160f5a25d5be380b51dad0828303/Screenshot%20(58).png)
+
+Conclusion:
+This project demonstrates an AI-powered Health Assistant capable of analyzing user-inputted diseases and symptoms to provide diagnostic insights and risk assessments. By integrating a chatbot interface, users can interact intuitively, receive personalized health information, and better understand potential health risks. This tool showcases the practical application of AI in healthcare, making health monitoring more accessible, interactive, and informative.
