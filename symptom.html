@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>SYMPTERA – Symptom Check</title>
+  <title>SYMPTERA – AI Symptom Assistant</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -13,20 +13,29 @@
   </nav>
 
   <section class="hero">
-    <h1>Check Your Symptoms</h1>
-    <p>Enter vitals and chat with the AI assistant.</p>
+    <h1>AI Health Assistant 🤖</h1>
+    <p>
+      Describe your symptoms in your own words.  
+      SYMPTERA will provide safe, non-diagnostic guidance.
+    </p>
 
-    <input type="number" id="bp" placeholder="Blood Pressure" />
-    <input type="number" id="sugar" placeholder="Sugar Level" />
-
-    <button class="cta" onclick="checkVitals()">Check Vitals</button>
-
-    <div id="vitalsResult" class="result hidden">
-      <span id="vitalsRisk" class="risk-badge">Vitals Risk</span>
-      <p id="vitalsText"></p>
+    <!-- Chatbot Focus Message -->
+    <div class="card" style="margin-top:30px;">
+      <h3>Start Chatting</h3>
+      <p style="margin-top:10px; opacity:0.9;">
+        Example: <br>
+        <em>"I have fever, headache and body pain since yesterday"</em>
+      </p>
     </div>
 
-    <a href="index.html" class="cta" style="margin-top:20px;">Back to Home</a>
+    <span class="disclaimer" style="margin-top:30px; display:block;">
+      ⚠ This AI does not provide medical diagnosis or treatment.  
+      Always consult a healthcare professional for medical advice.
+    </span>
+
+    <a href="index.html" class="cta" style="margin-top:40px;">
+      Back to Home
+    </a>
   </section>
 
   <footer>
@@ -34,7 +43,7 @@
   </footer>
 </div>
 
-<!-- Chatbase chatbot -->
+<!-- Chatbase chatbot embed -->
 <script>
 (function(){
   if(!window.chatbase || window.chatbase("getState")!=="initialized"){
@@ -61,7 +70,5 @@
 })();
 </script>
 
-<script src="script.js"></script>
 </body>
 </html>
-
