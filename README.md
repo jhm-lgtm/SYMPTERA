@@ -10,6 +10,7 @@ A simple landing page that introduces SYMPTERA and directs users to the AI healt
 OpenAI Health Assistant interface showing a chatbot ready to answer health-related questions.
 ![image alt](https://github.com/jhm-lgtm/SYMPTERA/blob/519d058fef09cb66f29c00156f0e23948d7cbc10/Screenshot%20(53).png)
 
-
+chatbot showing diagnostic results from entered symptoms and diseases.
+![image alt](https://github.com/jhm-lgtm/SYMPTERA/blob/612dfb93b80a6a184c3831867f046c817355fa0d/Screenshot%20(56).png)
 
 
