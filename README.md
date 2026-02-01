@@ -13,4 +13,4 @@ OpenAI Health Assistant interface showing a chatbot ready to answer health-relat
 chatbot showing diagnostic results from entered symptoms and diseases.
 ![image alt](https://github.com/jhm-lgtm/SYMPTERA/blob/612dfb93b80a6a184c3831867f046c817355fa0d/Screenshot%20(56).png)
 
-
+![image alt](https://github.com/jhm-lgtm/SYMPTERA/blob/38788ec33a2c160f5a25d5be380b51dad0828303/Screenshot%20(58).png)
