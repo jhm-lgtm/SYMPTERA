@@ -2,55 +2,57 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>SYMPTERA – AI Health Guidance</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>SYMPTERA – Smart Symptom Guidance</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<div class="container">
-  <nav class="navbar">
-    <div class="logo">SYMPTERA</div>
-  </nav>
-
-  <section class="hero">
+  <div class="hero">
     <h1>Smart Symptom Guidance</h1>
     <p>
       SYMPTERA is an AI-powered symptom guidance platform that helps users
       understand health concerns in a safe, non-diagnostic way.
     </p>
 
-    <a href="symptom.html" class="cta">Open AI Health Assistant</a>
+    <a href="symptom.html" class="btn">Start Symptom Check</a>
 
-    <span class="disclaimer">
+    <p class="note">
       ⚠ This system does not provide medical diagnosis or treatment.
-    </span>
-  </section>
+    </p>
+  </div>
 
-  <section class="features">
-    <div class="card">
-      <h3>AI-Guided</h3>
-      <p>Symptom-based guidance using conversational AI.</p>
-    </div>
-    <div class="card">
-      <h3>Safety First</h3>
-      <p>Non-diagnostic, ethical health information.</p>
-    </div>
-    <div class="card">
-      <h3>Human Friendly</h3>
-      <p>Easy-to-understand responses.</p>
-    </div>
-    <div class="card">
-      <h3>Instant Access</h3>
-      <p>No login required.</p>
-    </div>
-  </section>
+  <!-- ✅ CHATBASE FLOATING BOT -->
+  <script>
+  (function(){
+    if(!window.chatbase || window.chatbase("getState") !== "initialized"){
+      window.chatbase = (...arguments) => {
+        if(!window.chatbase.q){ window.chatbase.q = []; }
+        window.chatbase.q.push(arguments);
+      };
+      window.chatbase = new Proxy(window.chatbase, {
+        get(target, prop){
+          if(prop === "q"){ return target.q; }
+          return (...args) => target(prop, ...args);
+        }
+      });
+    }
 
-  <footer>
-    © 2026 SYMPTERA · Responsible AI for Health
-  </footer>
-</div>
+    const onLoad = function(){
+      const script = document.createElement("script");
+      script.src = "https://www.chatbase.co/embed.min.js";
+      script.id = "8ZdHTrrGdEZEZ44SNvGnr";
+      script.domain = "www.chatbase.co";
+      document.body.appendChild(script);
+    };
 
-<script src="script.js"></script>
+    if(document.readyState === "complete"){
+      onLoad();
+    } else {
+      window.addEventListener("load", onLoad);
+    }
+  })();
+  </script>
 
 </body>
 </html>
