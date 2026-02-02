@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>SYMPTERA – Symptom Checker</title>
+  <!-- Link your CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -26,13 +27,19 @@
   <!-- Include your JS -->
   <script src="script.js"></script>
 
-  <!-- Chatbase BOT (Auto-open) -->
+  <!-- Chatbase BOT (AUTO OPEN) -->
   <script>
   (function () {
     if (!window.chatbase || window.chatbase("getState") !== "initialized") {
-      window.chatbase = (...args) => { if (!window.chatbase.q) window.chatbase.q = []; window.chatbase.q.push(args); };
+      window.chatbase = (...args) => {
+        if (!window.chatbase.q) window.chatbase.q = [];
+        window.chatbase.q.push(args);
+      };
       window.chatbase = new Proxy(window.chatbase, {
-        get(target, prop) { if (prop === "q") return target.q; return (...args) => target(prop,...args); }
+        get(target, prop) {
+          if (prop === "q") return target.q;
+          return (...args) => target(prop, ...args);
+        },
       });
     }
 
@@ -43,7 +50,7 @@
       script.domain = "www.chatbase.co";
       document.body.appendChild(script);
 
-      // Auto-open bot after initialization
+      // Auto-open the bot after it initializes
       const openBot = setInterval(() => {
         try {
           if (window.chatbase && window.chatbase("getState") === "initialized") {
