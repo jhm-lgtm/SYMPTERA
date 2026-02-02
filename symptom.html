@@ -1,31 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SYMPTERA – AI Health Assistant</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="logo">SYMPTERA</div>
+</nav>
+
+<section class="center">
+  <h1>AI Health Assistant 🤖</h1>
+
+  <p class="main-text">
+    Describe your symptoms in your own words.<br />
+    <b>SYMPTERA</b> will provide safe, non-diagnostic guidance.
+  </p>
+
+  <div class="instruction-box">
+    👉 <b>Use the chatbot</b> in the bottom-right corner<br />
+    and ask anything you are facing
+  </div>
+
+  <div class="examples">
+    Examples you can try:
+    <br />• “I have fever and headache”
+    <br />• “I feel tired all the time”
+    <br />• “I have stomach pain after eating”
+  </div>
+
+  <div class="arrow-wrapper">
+    <span class="arrow-text">Chat with AI here</span>
+    <div class="arrow"></div>
+  </div>
+
+  <p class="disclaimer">
+    ⚠ This AI does not provide medical diagnosis or treatment.
+  </p>
+
+  <a href="index.html" class="cta small">Back to Home</a>
+</section>
+
+<footer>
+  © 2026 SYMPTERA · Responsible AI for Health
+</footer>
+
+<!-- ✅ NEW CHATBASE BOT -->
 <script>
 (function(){
-  if(!window.chatbase || window.chatbase("getState")!=="initialized"){
-    window.chatbase=(...args)=>{
-      if(!window.chatbase.q) window.chatbase.q=[];
-      window.chatbase.q.push(args);
+  if(!window.chatbase || window.chatbase("getState") !== "initialized"){
+    window.chatbase = (...arguments) => {
+      if(!window.chatbase.q){
+        window.chatbase.q = [];
+      }
+      window.chatbase.q.push(arguments);
     };
-    window.chatbase=new Proxy(window.chatbase,{
-      get(target,prop){
-        if(prop==="q") return target.q;
-        return (...args)=>target(prop,...args);
+    window.chatbase = new Proxy(window.chatbase, {
+      get(target, prop){
+        if(prop === "q"){
+          return target.q;
+        }
+        return (...args) => target(prop, ...args);
       }
     });
   }
 
-  const onLoad=function(){
-    const script=document.createElement("script");
-    script.src="https://www.chatbase.co/embed.min.js";
-    script.id="hajtKCx8ztVulmmOxsh7Y";
-    script.domain="www.chatbase.co";
+  const onLoad = function(){
+    const script = document.createElement("script");
+    script.src = "https://www.chatbase.co/embed.min.js";
+    script.id = "8ZdHTrrGdEZEZ44SNvGnr";  // ✅ YOUR NEW BOT
+    script.domain = "www.chatbase.co";
     document.body.appendChild(script);
-
-    setTimeout(()=>{
-      if(window.chatbase) window.chatbase("open");
-    }, 1500);
   };
 
-  if(document.readyState==="complete") onLoad();
-  else window.addEventListener("load",onLoad);
+  if(document.readyState === "complete"){
+    onLoad();
+  } else {
+    window.addEventListener("load", onLoad);
+  }
 })();
 </script>
+
+</body>
+</html>
