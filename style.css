@@ -1,4 +1,3 @@
-/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -6,36 +5,62 @@
   font-family: "Segoe UI", sans-serif;
 }
 
-html, body {
-  min-height: 100%;
-}
-
-/* GLOBAL BACKGROUND */
 body {
+  min-height: 100vh;
   background: radial-gradient(circle at top, #0b1d36, #000);
-  color: #eaf3ff;
-}
-
-/* NAVBAR */
-.navbar {
-  padding: 30px 60px;
-}
-
-.logo {
-  font-size: 28px;
-  font-weight: 700;
-  color: #3fa9f5;
-  letter-spacing: 2px;
-}
-
-/* HERO */
-.hero {
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  padding: 80px 20px;
-  max-width: 900px;
-  margin: auto;
 }
 
-.hero h1 {
-  font-size: 48px;
-  background: linear-gradient(90deg,
+.hero {
+  max-width: 800px;
+  padding: 40px;
+}
+
+h1 {
+  font-size: 42px;
+  margin-bottom: 20px;
+  color: #4fc3ff;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 30px;
+  background: #1e88e5;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 30px;
+  font-size: 16px;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  background: #1565c0;
+}
+
+.note {
+  font-size: 14px;
+  opacity: 0.8;
+  margin-top: 15px;
+}
+
+/* ✅ CHATBASE FIX */
+#chatbase-bubble {
+  bottom: 24px !important;
+  right: 24px !important;
+  z-index: 9999 !important;
+}
+
+#chatbase-bubble iframe {
+  border-radius: 18px !important;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6) !important;
+}
