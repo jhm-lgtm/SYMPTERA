@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>SYMPTERA – Smart Symptom Guidance</title>
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
   <div class="hero">
@@ -22,18 +21,15 @@
     </p>
   </div>
 
-  <!-- ✅ CHATBASE FLOATING BOT -->
+  <!-- Chatbase Bot (optional on landing page) -->
   <script>
   (function(){
     if(!window.chatbase || window.chatbase("getState") !== "initialized"){
-      window.chatbase = (...arguments) => {
-        if(!window.chatbase.q){ window.chatbase.q = []; }
-        window.chatbase.q.push(arguments);
-      };
+      window.chatbase = (...args)=>{ if(!window.chatbase.q) window.chatbase.q = []; window.chatbase.q.push(args); };
       window.chatbase = new Proxy(window.chatbase, {
         get(target, prop){
-          if(prop === "q"){ return target.q; }
-          return (...args) => target(prop, ...args);
+          if(prop==="q") return target.q;
+          return (...args)=>target(prop,...args);
         }
       });
     }
@@ -46,11 +42,8 @@
       document.body.appendChild(script);
     };
 
-    if(document.readyState === "complete"){
-      onLoad();
-    } else {
-      window.addEventListener("load", onLoad);
-    }
+    if(document.readyState==="complete") onLoad();
+    else window.addEventListener("load", onLoad);
   })();
   </script>
 
