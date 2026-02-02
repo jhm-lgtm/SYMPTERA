@@ -30,4 +30,3 @@ function checkVitals() {
 
   result.classList.remove("hidden");
 }
-
