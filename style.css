@@ -53,14 +53,21 @@ p {
   margin-top: 15px;
 }
 
-/* ✅ CHATBASE FIX */
-#chatbase-bubble {
-  bottom: 24px !important;
-  right: 24px !important;
-  z-index: 9999 !important;
+/* Vitals Badge */
+.risk-badge {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
-#chatbase-bubble iframe {
-  border-radius: 18px !important;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.6) !important;
-}
+.risk-badge.low { background-color: #4caf50; }
+.risk-badge.medium { background-color: #ff9800; }
+.risk-badge.high { background-color: #f44336; }
+
+.hidden { display: none; }
+
+/* Chatbase Bot Fix */
+#chatbase-bubble { bottom: 24px !important; right: 24px !important; z-index: 9999 !important; }
+#chatbase-bubble iframe { border-radius: 18px !important; box-shadow: 0 20px 60px rgba(0,0,0,0.6) !important; }
