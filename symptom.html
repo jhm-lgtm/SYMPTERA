@@ -1,98 +1,63 @@
-<!-- CHATBASE BOT (AUTO OPEN) -->
-<script>
-(function () {
-  if (!window.chatbase || window.chatbase("getState") !== "initialized") {
-    window.chatbase = (...arguments) => {
-      if (!window.chatbase.q) {
-        window.chatbase.q = [];
-      }
-      window.chatbase.q.push(arguments);
-    };
-    window.chatbase = new Proxy(window.chatbase, {
-      get(target, prop) {
-        if (prop === "q") {
-          return target.q;
-        }
-        return (...args) => target(prop, ...args);
-      },
-    });
-  }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SYMPTERA – Symptom Checker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-  const onLoad = function () {
-    const script = document.createElement("script");
-    script.src = "https://www.chatbase.co/embed.min.js";
-    script.id = "8ZdHTrrGdEZEZ44SNvGnr"; // ✅ your new bot
-    script.domain = "www.chatbase.co";
-    document.body.appendChild(script);
+  <div class="hero">
+    <h1>Check Your Symptoms</h1>
+    <p>Enter your vitals and symptoms to get AI-guided guidance.</p>
 
-    // ✅ AUTO OPEN CHATBOT
-    const openBot = setInterval(() => {
-      try {
-        if (window.chatbase && window.chatbase("getState") === "initialized") {
-          window.chatbase("open");
-          clearInterval(openBot);
-        }
-      } catch (e) {}
-    }, 500);
-  };
+    <div class="vitals-form">
+      <input type="number" id="bp" placeholder="Blood Pressure">
+      <input type="number" id="sugar" placeholder="Sugar Level">
+      <button onclick="checkVitals()">Check Vitals</button>
+    </div>
 
-  if (document.readyState === "complete") {
-    onLoad();
-  } else {
-    window.addEventListener("load", onLoad);
-  }
-})();
-</script>
+    <div id="vitalsResult" class="hidden">
+      <span id="vitalsRisk" class="risk-badge"></span>
+      <p id="vitalsText"></p>
+    </div>
+  </div>
 
+  <!-- Include your JS -->
+  <script src="script.js"></script>
 
-<script>
-(function () {
-  if (!window.chatbase || window.chatbase("getState") !== "initialized") {
-    window.chatbase = (...arguments) => {
-      if (!window.chatbase.q) window.chatbase.q = [];
-      window.chatbase.q.push(arguments);
-    };
-    window.chatbase = new Proxy(window.chatbase, {
-      get(target, prop) {
-        if (prop === "q") return target.q;
-        return (...args) => target(prop, ...args);
-      },
-    });
-  }
-
-  const onLoad = function () {
-    const script = document.createElement("script");
-    script.src = "https://www.chatbase.co/embed.min.js";
-    script.id = "8ZdHTrrGdEZEZ44SNvGnr";
-    script.domain = "www.chatbase.co";
-    document.body.appendChild(script);
-  };
-
-  window.openChat = function () {
-    try {
-      window.chatbase("open");
-    } catch (e) {
-      alert("Chatbot is still loading, please try again.");
+  <!-- Chatbase BOT (Auto-open) -->
+  <script>
+  (function () {
+    if (!window.chatbase || window.chatbase("getState") !== "initialized") {
+      window.chatbase = (...args) => { if (!window.chatbase.q) window.chatbase.q = []; window.chatbase.q.push(args); };
+      window.chatbase = new Proxy(window.chatbase, {
+        get(target, prop) { if (prop === "q") return target.q; return (...args) => target(prop,...args); }
+      });
     }
-  };
 
-  if (document.readyState === "complete") onLoad();
-  else window.addEventListener("load", onLoad);
-})();
-</script>
+    const onLoad = function () {
+      const script = document.createElement("script");
+      script.src = "https://www.chatbase.co/embed.min.js";
+      script.id = "8ZdHTrrGdEZEZ44SNvGnr";
+      script.domain = "www.chatbase.co";
+      document.body.appendChild(script);
 
+      // Auto-open bot after initialization
+      const openBot = setInterval(() => {
+        try {
+          if (window.chatbase && window.chatbase("getState") === "initialized") {
+            window.chatbase("open");
+            clearInterval(openBot);
+          }
+        } catch (e) {}
+      }, 500);
+    };
 
+    if (document.readyState === "complete") onLoad();
+    else window.addEventListener("load", onLoad);
+  })();
+  </script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+</body>
+</html>
