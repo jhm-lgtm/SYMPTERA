@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>SYMPTERA – Smart Symptom Guidance</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
   <div class="hero">
@@ -14,38 +15,12 @@
       understand health concerns in a safe, non-diagnostic way.
     </p>
 
-    <a href="symptom.html" class="btn">Start Symptom Check</a>
+    <a href="symptom.html" class="btn">Open AI Health Assistant</a>
 
     <p class="note">
       ⚠ This system does not provide medical diagnosis or treatment.
     </p>
   </div>
-
-  <!-- Chatbase Bot (optional on landing page) -->
-  <script>
-  (function(){
-    if(!window.chatbase || window.chatbase("getState") !== "initialized"){
-      window.chatbase = (...args)=>{ if(!window.chatbase.q) window.chatbase.q = []; window.chatbase.q.push(args); };
-      window.chatbase = new Proxy(window.chatbase, {
-        get(target, prop){
-          if(prop==="q") return target.q;
-          return (...args)=>target(prop,...args);
-        }
-      });
-    }
-
-    const onLoad = function(){
-      const script = document.createElement("script");
-      script.src = "https://www.chatbase.co/embed.min.js";
-      script.id = "8ZdHTrrGdEZEZ44SNvGnr";
-      script.domain = "www.chatbase.co";
-      document.body.appendChild(script);
-    };
-
-    if(document.readyState==="complete") onLoad();
-    else window.addEventListener("load", onLoad);
-  })();
-  </script>
 
 </body>
 </html>
