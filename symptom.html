@@ -1,62 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>SYMPTERA – AI Health Assistant</title>
+  <meta charset="UTF-8">
+  <title>SYMPTERA – Symptoms</title>
   <link rel="stylesheet" href="style.css">
 </head>
+<body class="symptom">
 
-<body>
+  <div class="layout">
 
-<div class="symptom-layout">
+    <!-- LEFT INFO BLOCK -->
+    <div class="info-box">
+      <h2>AI Health Assistant</h2>
+      <p>Describe your symptoms in your own words.</p>
 
-  <div class="symptom-content">
-    <div>
-      <h1>AI Health Assistant 🩺</h1>
-      <p>
-        Describe your symptoms in your own words.<br>
-        SYMPTERA provides safe, non-diagnostic guidance.
-      </p>
+      <ul>
+        <li>I have fever and headache</li>
+        <li>I feel tired all the time</li>
+        <li>I have stomach pain after eating</li>
+      </ul>
 
-      <div class="note">
-        👉 The assistant opens automatically on the right
-      </div>
-
-      <div class="examples">
-        <strong>Examples you can try:</strong><br>
-        • I have fever and headache<br>
-        • I feel tired all the time<br>
-        • I have stomach pain after eating
-      </div>
-
-      <a href="index.html" class="btn">Back to Home</a>
+      <a href="index.html">← Back to Home</a>
     </div>
+
+    <!-- CHATBOT BLOCK -->
+    <div class="chat-box">
+      <!-- Chatbase loads here -->
+    </div>
+
   </div>
 
-</div>
-
-<!-- ✅ CHATBASE AUTO OPEN (GITHUB SAFE) -->
-<script>
-(function () {
-  window.chatbase = window.chatbase || function () {
-    (window.chatbase.q = window.chatbase.q || []).push(arguments);
-  };
-
-  const script = document.createElement("script");
-  script.src = "https://www.chatbase.co/embed.min.js";
-  script.id = "8ZdHTrrGdEZEZ44SNvGnr";
-  script.defer = true;
-  document.body.appendChild(script);
-
-  window.addEventListener("load", () => {
-    setTimeout(() => {
-      try {
-        window.chatbase("open");
-      } catch (e) {}
-    }, 2500);
-  });
-})();
-</script>
+  <script src="script.js"></script>
 
 </body>
 </html>
