@@ -1,36 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>SYMPTERA – Symptoms</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body class="symptom">
+<script>
+(function () {
+  // Init Chatbase
+  window.chatbase = window.chatbase || function () {
+    (window.chatbase.q = window.chatbase.q || []).push(arguments);
+  };
 
-  <div class="layout">
+  const script = document.createElement("script");
+  script.src = "https://www.chatbase.co/embed.min.js";
+  script.id = "8ZdHTrrGdEZEZ44SNvGnr";
+  script.defer = true;
+  document.body.appendChild(script);
 
-    <!-- LEFT INFO BLOCK -->
-    <div class="info-box">
-      <h2>AI Health Assistant</h2>
-      <p>Describe your symptoms in your own words.</p>
-
-      <ul>
-        <li>I have fever and headache</li>
-        <li>I feel tired all the time</li>
-        <li>I have stomach pain after eating</li>
-      </ul>
-
-      <a href="index.html">← Back to Home</a>
-    </div>
-
-    <!-- CHATBOT BLOCK -->
-    <div class="chat-box">
-      <!-- Chatbase loads here -->
-    </div>
-
-  </div>
-
-  <script src="script.js"></script>
-
-</body>
-</html>
+  // ✅ FORCE AUTO OPEN (GitHub-safe)
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      try {
+        window.chatbase("open");
+      } catch (e) {
+        console.log("Chatbase not ready yet");
+      }
+    }, 2500); // ← THIS is the key
+  });
+})();
+</script>
