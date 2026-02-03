@@ -1,39 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>SYMPTERA – Symptom Checker</title>
-  <!-- Link your CSS -->
+  <meta charset="UTF-8" />
+  <title>SYMPTERA – Symptom Check</title>
+
+  <!-- ✅ LOAD SAME CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
   <div class="hero">
-    <h1>Check Your Symptoms</h1>
-    <p>Enter your vitals and symptoms to get AI-guided guidance.</p>
+    <h1>Symptom Check</h1>
+    <p>
+      Please describe your symptoms to SYMPTERA.
+      This guidance is informational only.
+    </p>
 
-    <div class="vitals-form">
-      <input type="number" id="bp" placeholder="Blood Pressure">
-      <input type="number" id="sugar" placeholder="Sugar Level">
-      <button onclick="checkVitals()">Check Vitals</button>
-    </div>
-
-    <div id="vitalsResult" class="hidden">
-      <span id="vitalsRisk" class="risk-badge"></span>
-      <p id="vitalsText"></p>
-    </div>
+    <p class="note">
+      🤖 Chatbot is opening automatically…
+    </p>
   </div>
 
-  <!-- Include your JS -->
-  <script src="script.js"></script>
-
-  <!-- Chatbase BOT (AUTO OPEN) -->
+  <!-- ✅ CHATBASE (LOAD ONCE + AUTO OPEN) -->
   <script>
   (function () {
     if (!window.chatbase || window.chatbase("getState") !== "initialized") {
-      window.chatbase = (...args) => {
+      window.chatbase = (...arguments) => {
         if (!window.chatbase.q) window.chatbase.q = [];
-        window.chatbase.q.push(args);
+        window.chatbase.q.push(arguments);
       };
       window.chatbase = new Proxy(window.chatbase, {
         get(target, prop) {
@@ -50,10 +45,10 @@
       script.domain = "www.chatbase.co";
       document.body.appendChild(script);
 
-      // Auto-open the bot after it initializes
+      // ✅ AUTO OPEN AFTER LOAD
       const openBot = setInterval(() => {
         try {
-          if (window.chatbase && window.chatbase("getState") === "initialized") {
+          if (window.chatbase("getState") === "initialized") {
             window.chatbase("open");
             clearInterval(openBot);
           }
@@ -61,8 +56,11 @@
       }, 500);
     };
 
-    if (document.readyState === "complete") onLoad();
-    else window.addEventListener("load", onLoad);
+    if (document.readyState === "complete") {
+      onLoad();
+    } else {
+      window.addEventListener("load", onLoad);
+    }
   })();
   </script>
 
