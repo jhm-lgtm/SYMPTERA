@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <title>SYMPTERA – Symptom Check</title>
 
-  <!-- ✅ LOAD SAME CSS -->
+  <!-- Load your CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -16,13 +16,10 @@
       Please describe your symptoms to SYMPTERA.
       This guidance is informational only.
     </p>
-
-    <p class="note">
-      🤖 Chatbot is opening automatically…
-    </p>
+    <p class="note">🤖 Chatbot is opening automatically…</p>
   </div>
 
-  <!-- ✅ CHATBASE (LOAD ONCE + AUTO OPEN) -->
+  <!-- CHATBASE BOT (AUTO OPEN) -->
   <script>
   (function () {
     if (!window.chatbase || window.chatbase("getState") !== "initialized") {
@@ -45,7 +42,7 @@
       script.domain = "www.chatbase.co";
       document.body.appendChild(script);
 
-      // ✅ AUTO OPEN AFTER LOAD
+      // auto-open
       const openBot = setInterval(() => {
         try {
           if (window.chatbase("getState") === "initialized") {
@@ -56,13 +53,9 @@
       }, 500);
     };
 
-    if (document.readyState === "complete") {
-      onLoad();
-    } else {
-      window.addEventListener("load", onLoad);
-    }
+    if (document.readyState === "complete") onLoad();
+    else window.addEventListener("load", onLoad);
   })();
   </script>
-
 </body>
 </html>
