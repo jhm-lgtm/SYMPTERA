@@ -11,100 +11,96 @@ body {
   color: #ffffff;
 }
 
-/* ===== HOME PAGE ===== */
+/* ===== HERO ===== */
 
 .hero {
-  min-height: 100vh;
+  min-height: 70vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 40px;
+  padding: 60px 20px;
 }
 
 .hero h1 {
-  font-size: 44px;
-  color: #4fc3ff;
+  font-size: 46px;
+  color: #3ecbff;
   margin-bottom: 20px;
 }
 
-.hero p {
-  max-width: 720px;
+.hero-text {
+  max-width: 800px;
   font-size: 18px;
-  margin-bottom: 25px;
-  line-height: 1.6;
+  line-height: 1.7;
+  opacity: 0.9;
+  margin-bottom: 35px;
 }
 
-.btn {
-  display: inline-block;
-  padding: 14px 32px;
-  background: #1e88e5;
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn.primary {
+  padding: 14px 36px;
+  background: linear-gradient(135deg, #3ea6ff, #1e88e5);
   color: #fff;
   text-decoration: none;
   border-radius: 30px;
   font-size: 16px;
-  transition: 0.3s ease;
-  margin-top: 20px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.btn:hover {
-  background: #1565c0;
+.btn.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(62, 166, 255, 0.4);
 }
 
-.note {
+.warning {
   font-size: 14px;
-  opacity: 0.8;
-  margin-top: 20px;
+  opacity: 0.75;
 }
 
-/* ===== SYMPTOM PAGE ===== */
+/* ===== FEATURES ===== */
 
-.symptom-layout {
+.features {
   display: grid;
-  grid-template-columns: 1fr;
-  min-height: 100vh;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  padding: 40px 60px 80px;
+  max-width: 1200px;
+  margin: auto;
 }
 
-.symptom-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 60px;
+.feature-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 18px;
+  padding: 26px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.35);
 }
 
-.symptom-content h1 {
-  font-size: 40px;
-  color: #4fc3ff;
-  margin-bottom: 15px;
-}
-
-.symptom-content p {
+.feature-card h3 {
+  color: #ffffff;
+  margin-bottom: 10px;
   font-size: 18px;
-  line-height: 1.6;
-  margin-bottom: 20px;
 }
 
-.examples {
-  background: rgba(255,255,255,0.05);
-  padding: 20px;
-  border-radius: 16px;
-  margin-top: 20px;
-  font-size: 15px;
+.feature-card p {
+  font-size: 14px;
+  opacity: 0.85;
+  line-height: 1.5;
 }
 
-/* ===== CHATBASE STYLE ===== */
+/* ===== FOOTER ===== */
 
-#chatbase-bubble {
-  right: 20px !important;
-  bottom: 20px !important;
-  z-index: 9999 !important;
-}
-
-#chatbase-bubble iframe {
-  width: 380px !important;
-  height: 560px !important;
-  border-radius: 18px !important;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.6) !important;
+.footer {
+  text-align: center;
+  padding: 25px;
+  font-size: 13px;
+  opacity: 0.6;
 }
