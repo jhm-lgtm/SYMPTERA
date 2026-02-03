@@ -1,6 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SYMPTERA – AI Health Assistant</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="symptom-layout">
+
+  <div class="symptom-content">
+    <div>
+      <h1>AI Health Assistant 🩺</h1>
+      <p>
+        Describe your symptoms in your own words.<br>
+        SYMPTERA provides safe, non-diagnostic guidance.
+      </p>
+
+      <div class="note">
+        👉 The assistant opens automatically on the right
+      </div>
+
+      <div class="examples">
+        <strong>Examples you can try:</strong><br>
+        • I have fever and headache<br>
+        • I feel tired all the time<br>
+        • I have stomach pain after eating
+      </div>
+
+      <a href="index.html" class="btn">Back to Home</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- ✅ CHATBASE AUTO OPEN (GITHUB SAFE) -->
 <script>
 (function () {
-  // Init Chatbase
   window.chatbase = window.chatbase || function () {
     (window.chatbase.q = window.chatbase.q || []).push(arguments);
   };
@@ -11,15 +48,15 @@
   script.defer = true;
   document.body.appendChild(script);
 
-  // ✅ FORCE AUTO OPEN (GitHub-safe)
   window.addEventListener("load", () => {
     setTimeout(() => {
       try {
         window.chatbase("open");
-      } catch (e) {
-        console.log("Chatbase not ready yet");
-      }
-    }, 2500); // ← THIS is the key
+      } catch (e) {}
+    }, 2500);
   });
 })();
 </script>
+
+</body>
+</html>
