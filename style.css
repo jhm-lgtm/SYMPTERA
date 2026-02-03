@@ -9,38 +9,43 @@ body {
   min-height: 100vh;
   background: radial-gradient(circle at top, #0b1d36, #000);
   color: #ffffff;
+}
+
+/* ===== HOME PAGE ===== */
+
+.hero {
+  min-height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-}
-
-.hero {
-  max-width: 800px;
   padding: 40px;
 }
 
-h1 {
-  font-size: 42px;
-  margin-bottom: 20px;
+.hero h1 {
+  font-size: 44px;
   color: #4fc3ff;
+  margin-bottom: 20px;
 }
 
-p {
+.hero p {
+  max-width: 720px;
   font-size: 18px;
+  margin-bottom: 25px;
   line-height: 1.6;
-  margin-bottom: 20px;
 }
 
 .btn {
   display: inline-block;
-  padding: 14px 30px;
+  padding: 14px 32px;
   background: #1e88e5;
   color: #fff;
   text-decoration: none;
   border-radius: 30px;
   font-size: 16px;
   transition: 0.3s ease;
+  margin-top: 20px;
 }
 
 .btn:hover {
@@ -50,37 +55,56 @@ p {
 .note {
   font-size: 14px;
   opacity: 0.8;
-  margin-top: 15px;
+  margin-top: 20px;
 }
 
-/* Vitals Badge */
-.risk-badge {
-  display: inline-block;
-  padding: 8px 16px;
-  border-radius: 20px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
+/* ===== SYMPTOM PAGE ===== */
 
-.risk-badge.low { background-color: #4caf50; }
-.risk-badge.medium { background-color: #ff9800; }
-.risk-badge.high { background-color: #f44336; }
-
-.hidden { display: none; }
-
-/* Chatbase Bot Fix */
-#chatbase-bubble { bottom: 24px !important; right: 24px !important; z-index: 9999 !important; }
-#chatbase-bubble iframe { border-radius: 18px !important; box-shadow: 0 20px 60px rgba(0,0,0,0.6) !important; }
-
-
-
-body {
+.symptom-layout {
+  display: grid;
+  grid-template-columns: 1fr;
   min-height: 100vh;
-  background: radial-gradient(circle at top, #0b1d36, #000);
-  color: #ffffff;
+}
+
+.symptom-content {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  padding: 60px;
 }
 
+.symptom-content h1 {
+  font-size: 40px;
+  color: #4fc3ff;
+  margin-bottom: 15px;
+}
+
+.symptom-content p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.examples {
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  border-radius: 16px;
+  margin-top: 20px;
+  font-size: 15px;
+}
+
+/* ===== CHATBASE STYLE ===== */
+
+#chatbase-bubble {
+  right: 20px !important;
+  bottom: 20px !important;
+  z-index: 9999 !important;
+}
+
+#chatbase-bubble iframe {
+  width: 380px !important;
+  height: 560px !important;
+  border-radius: 18px !important;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6) !important;
+}
