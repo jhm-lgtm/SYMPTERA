@@ -1,32 +1,18 @@
-let vitalsRiskLevel = "LOW";
+window.addEventListener("load", () => {
+  const script = document.createElement("script");
+  script.src = "https://www.chatbase.co/embed.min.js";
+  script.id = "YOUR_CHATBASE_ID";
+  script.defer = true;
 
-function checkVitals() {
-  const bp = +document.getElementById("bp").value;
-  const sugar = +document.getElementById("sugar").value;
+  document.body.appendChild(script);
 
-  const result = document.getElementById("vitalsResult");
-  const badge = document.getElementById("vitalsRisk");
-  const text = document.getElementById("vitalsText");
-
-  if (!bp || !sugar) {
-    alert("Please enter all vitals.");
-    return;
-  }
-
-  vitalsRiskLevel = "LOW";
-
-  if (bp > 140 || sugar > 180) vitalsRiskLevel = "HIGH";
-  else if (bp > 120 || sugar > 140) vitalsRiskLevel = "MEDIUM";
-
-  badge.className = "risk-badge " + vitalsRiskLevel.toLowerCase();
-  badge.innerText = `Vitals Risk: ${vitalsRiskLevel}`;
-
-  text.innerText =
-    vitalsRiskLevel === "LOW"
-      ? "Vitals are within a safe range."
-      : vitalsRiskLevel === "MEDIUM"
-      ? "Vitals need monitoring."
-      : "High risk detected. Medical consultation recommended.";
-
-  result.classList.remove("hidden");
-}
+  // Auto open chatbot
+  const openBot = setInterval(() => {
+    const iframe = document.querySelector("iframe");
+    if (iframe) {
+      iframe.style.width = "100%";
+      iframe.style.height = "100%";
+      clearInterval(openBot);
+    }
+  }, 500);
+});
